@@ -1,0 +1,75 @@
+<mat-toolbar color="primary">
+  <button mat-icon-button aria-label="Menu icon" (click)="toggleMenu()">
+    <mat-icon>menu</mat-icon>
+  </button>
+
+  <h1 (click)="dashboard()" style="cursor: pointer">Admin Panel</h1>
+  <span class="example-spacer"></span>
+
+  <button
+    mat-icon-button
+    aria-label="Account"
+    class="account"
+    (click)="admin_login()"
+  >
+    <mat-icon>person</mat-icon>
+  </button>
+</mat-toolbar>
+<mat-sidenav-container autosize="true" class="example-container">
+  <mat-sidenav
+    [ngClass]="!isCollapsed ? 'expanded fixed-sidenav' : 'fixed-sidenav'"
+    [mode]="isMobile ? 'over' : 'side'"
+    [opened]="isMobile ? 'false' : 'true'"
+  >
+    <mat-nav-list>
+      <a mat-list-item (click)="dashboard()">
+        <span class="entry">
+          <mat-icon>house</mat-icon>
+          <span *ngIf="!isCollapsed">Dashboard</span>
+        </span>
+      </a>
+      <a mat-list-item (click)="addProduct()">
+        <span class="entry">
+          <mat-icon>add</mat-icon>
+          <span *ngIf="!isCollapsed">Add Products</span>
+        </span>
+      </a>
+      <a mat-list-item (click)="viewProducts()">
+        <span class="entry">
+          <mat-icon>grid_view</mat-icon>
+          <span *ngIf="!isCollapsed">View Products</span>
+        </span>
+      </a>
+      <a mat-list-item (click)="allOrders()">
+        <span class="entry">
+          <mat-icon>gavel</mat-icon>
+          <span *ngIf="!isCollapsed">Orders</span>
+        </span>
+      </a>
+      <a mat-list-item (click)="analytics()">
+        <span class="entry">
+          <mat-icon>line_axis</mat-icon>
+          <span *ngIf="!isCollapsed">Orders</span>
+        </span>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div class="per-month-chart">
+      <div style="width: 45%" class="opm">
+        <canvas id="ordersPerMonthChart" width="400" height="200"></canvas>
+      </div>
+      <div style="width: 45%" class="spm">
+        <canvas id="salesPerMonthChart" width="400" height="200"></canvas>
+      </div>
+    </div>
+    <div class="per-day-chart">
+      <div style="width: 45%; margin-top: 20px" class="opd">
+        <canvas id="ordersChart" width="400" height="200"></canvas>
+      </div>
+      <div style="width: 45%; margin-top: 20px" class="spd">
+        <canvas id="salesChart" width="400" height="200"></canvas>
+      </div>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

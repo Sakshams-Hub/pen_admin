@@ -1,0 +1,80 @@
+<mat-toolbar color="primary">
+  <button mat-icon-button aria-label="Menu icon" (click)="toggleMenu()">
+    <mat-icon>menu</mat-icon>
+  </button>
+
+  <h1 (click)="dashboard()" style="cursor: pointer">Admin Panel</h1>
+  <span class="example-spacer"></span>
+
+  <button mat-icon-button aria-label="Account" class="account">
+    <mat-icon>person</mat-icon>
+  </button>
+</mat-toolbar>
+<mat-sidenav-container autosize="true" class="example-container">
+  <mat-sidenav
+    [ngClass]="!isCollapsed ? 'expanded fixed-sidenav' : 'fixed-sidenav'"
+    [mode]="isMobile ? 'over' : 'side'"
+    [opened]="isMobile ? 'false' : 'true'"
+  >
+    <mat-nav-list>
+      <a mat-list-item (click)="dashboard()">
+        <span class="entry">
+          <mat-icon>house</mat-icon>
+          <span *ngIf="!isCollapsed">Dashboard</span>
+        </span>
+      </a>
+      <a mat-list-item (click)="addProduct()">
+        <span class="entry">
+          <mat-icon>add</mat-icon>
+          <span *ngIf="!isCollapsed">Add Products</span>
+        </span>
+      </a>
+      <a mat-list-item (click)="viewProducts()">
+        <span class="entry">
+          <mat-icon>grid_view</mat-icon>
+          <span *ngIf="!isCollapsed">View Products</span>
+        </span>
+      </a>
+      <a mat-list-item>
+        <span class="entry">
+          <mat-icon>gavel</mat-icon>
+          <span *ngIf="!isCollapsed">Orders</span>
+        </span>
+      </a>
+
+      <a mat-list-item (click)="analytics()">
+        <span class="entry">
+          <mat-icon>line_axis</mat-icon>
+          <span *ngIf="!isCollapsed">Orders</span>
+        </span>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div class="recent">
+      <div class="recent_orders">
+        <h3>All Order</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Order ID</th>
+              <th>Customer Name</th>
+              <th>Order Date</th>
+              <th>Total Amount</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let order of allOrders">
+              <td>{{ order.order_id }}</td>
+              <td>{{ order.customer_name }}</td>
+              <td>{{ order.order_date }}</td>
+              <td>₹ {{ order.total_amount }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="empty"></div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

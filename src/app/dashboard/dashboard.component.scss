@@ -1,0 +1,213 @@
+h1 {
+    padding: 0 1rem;
+}
+
+h2 {
+    padding: 1rem;
+}
+
+mat-toolbar {
+    position: fixed;
+    top: 0;
+    z-index: 2;
+}
+
+mat-sidenav-container {
+    height: 100%;
+}
+
+.search {
+    border: none;
+    background-color: #3f51b5;
+    border-bottom: 1px solid black;
+}
+
+.details {
+    border: none;
+}
+
+// Move the content down so that it won't be hidden by the toolbar
+mat-sidenav {
+    padding-top: 3.5rem;
+    transition: width 0.3s ease;
+
+    @media screen and (min-width: 600px) {
+        padding-top: 4rem;
+    }
+
+    .entry {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 0.75rem;
+    }
+
+}
+
+.fixed-sidenav {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+}
+
+// Move the content down so that it won't be hidden by the toolbar
+mat-sidenav-content {
+    padding-top: 3.5rem;
+    margin-left: 250px;
+    /* Adjust the margin based on the width of your side navigation */
+    overflow-y: auto;
+
+    @media screen and (min-width: 600px) {
+        padding-top: 4rem;
+    }
+}
+
+.expanded {
+    width: 250px;
+}
+
+
+.example-spacer {
+    flex: 1;
+}
+
+.example-card {
+    max-width: 100px;
+    height: 200px;
+    margin: 10px;
+}
+
+.dash{
+    margin-top: 25px;
+}
+
+.container {
+    display: flex;
+}
+
+.container div{
+    display: flex;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.users {
+    align-items: center;
+    height: 80px;
+    width: 200px;
+    
+    margin-left: 50px;
+    border-radius: 10px;
+
+    h1{
+        margin-top: 15px;
+    }
+}
+
+
+
+.products {
+    align-items: center;
+    height: 80px;
+    width: 200px;
+   
+    margin-left: 50px;
+    border-radius: 10px;
+
+    h1 {
+        margin-top: 15px;
+    }
+}
+
+
+
+.orders {
+    align-items: center;
+    height: 80px;
+    width: 200px;
+    
+    margin-left: 50px;
+    border-radius: 10px;
+
+    h1 {
+        margin-top: 15px;
+    }
+}
+
+
+
+.sales {
+    align-items: center;
+    height: 80px;
+    width: 250px;
+    
+    margin-left: 50px;
+    border-radius: 10px;
+
+    h1 {
+        margin-top: 15px;
+    }
+}
+
+
+
+
+
+
+.recent_orders {
+    width: 80%;
+    margin-left: 50px;
+    margin-top: 50px;
+    padding: 25px;
+    border-radius: 5px;
+    border: 1px solid rgb(239, 239, 239);
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+    height: auto;
+}
+
+h3 {
+    font-size: 30px;
+    font-weight: 800;
+    font-family: monospace;
+}
+
+th,
+td {
+    padding: 10px;
+    text-align: left;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table,
+td,
+th {
+
+    text-align: left;
+}
+
+th {
+    font-size: 25px;
+    font-family: monospace;
+    font-weight: 800;
+}
+
+td {
+    font-size: 20px;
+    font-family: monospace;
+    font-weight: 800;
+}
+
+.all_orders {
+    margin-top: 20px;
+    height: 35px;
+    width: 90px;
+    border-radius: 10px;
+    font-size: 15px;
+    background-color: black;
+    color: white;
+}
+
